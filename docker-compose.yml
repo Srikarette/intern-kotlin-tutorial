@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres:15.5
+    environment:
+      POSTGRES_USER: sqladmin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+      - ./db/init-sql-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"  # Map the PostgreSQL port to the host machine
+
+  redis:
+    image: redis:7.0.10
+    restart: always
+    ports:
+      - "12304:6379"

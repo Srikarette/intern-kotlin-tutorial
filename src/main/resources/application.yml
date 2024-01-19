@@ -1,0 +1,16 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tutorial_db
+    username: sqladmin
+    password: password
+
+  data:
+    redis:
+      host: localhost
+      port: 12304
+      ssl:
+        enabled: false
+
