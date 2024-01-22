@@ -6,12 +6,14 @@ import com.example.tutorial.dto.UserDeleteReq
 import com.example.tutorial.dto.UserDeleteRes
 import com.example.tutorial.dto.UserGetByIdReq
 import com.example.tutorial.dto.UserGetByIdRes
+import com.example.tutorial.dto.UserListGetAllFullNameRes
 import com.example.tutorial.dto.UserListGetRes
 import com.example.tutorial.dto.UserUpdateReq
 import com.example.tutorial.dto.UserUpdateRes
 import com.example.tutorial.mapper.UserCreateResMapper
 import com.example.tutorial.mapper.UserDeleteByIdResMapper
 import com.example.tutorial.mapper.UserGetByIdResMapper
+import com.example.tutorial.mapper.UserListGetFullNameResMapper
 import com.example.tutorial.mapper.UserListGetResMapper
 import com.example.tutorial.mapper.UserUpdateByIdResMapper
 import com.example.tutorial.service.UserService
@@ -29,6 +31,12 @@ class UserController(private val userService: UserService) {
     fun getUserList(): List<UserListGetRes> {
         val users = userService.getUsers()
         return UserListGetResMapper.toUserListGetRes(users)
+    }
+
+    @PostMapping("/get/full/name")
+    fun getUserFullNameList(): UserListGetAllFullNameRes {
+        val users = userService.getUsersFullname()
+        return UserListGetFullNameResMapper.toUserListGetFullNameRes(users)
     }
 
     @PostMapping("/get")

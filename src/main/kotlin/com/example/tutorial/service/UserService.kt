@@ -8,6 +8,7 @@ import com.example.tutorial.dto.UserGetByIdReq
 import com.example.tutorial.dto.UserUpdateReq
 import com.example.tutorial.dto.enums.UserGender
 import com.example.tutorial.entity.User
+import com.example.tutorial.entity.viewmodel.UserFullNameGetListProjection
 import com.example.tutorial.repository.UserRepository
 import org.springframework.cache.annotation.CacheEvict
 import org.springframework.cache.annotation.CachePut
@@ -22,6 +23,11 @@ class UserService(
     @Cacheable(value = ["userList"], unless = "#result==null")
     fun getUsers(): List<User> {
         return userRepository.findAll()
+    }
+
+//    @Cacheable(value = ["fullNameList"], unless = "#result==null")
+    fun getUsersFullname(): List<UserFullNameGetListProjection> {
+        return userRepository.getAllUserFullName()
     }
 
     @Cacheable(value = ["user"], key = "#req.userId")
