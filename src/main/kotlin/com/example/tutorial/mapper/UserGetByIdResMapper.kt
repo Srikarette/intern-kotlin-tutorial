@@ -9,7 +9,7 @@ class UserGetByIdResMapper private constructor(){
     companion object{
         fun toUserGetByIdRes(user: User): UserGetByIdRes {
             return UserGetByIdRes(
-                id = user.id,
+                id = user.id!!,
                 firstName = user.firstName,
                 lastName = user.lastName,
                 email = user.email,

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
 import java.util.UUID
 
-data class UserUpdateReq(
+data class UserUpdateByIdReq(
     @field:NotNull(message = "userId must not be null")
     val userId: UUID? = null,
     @field:Size(max = 50, message = "firstName must no longer than 50 word")

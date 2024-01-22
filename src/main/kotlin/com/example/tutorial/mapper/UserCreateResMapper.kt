@@ -8,7 +8,7 @@ class UserCreateResMapper private constructor() {
     companion object{
         fun toUserCreateRes(user: User): UserCreateRes {
             return UserCreateRes(
-                id = user.id,
+                id = user.id!!,
                 firstName = user.firstName,
                 lastName = user.lastName,
                 email = user.email,

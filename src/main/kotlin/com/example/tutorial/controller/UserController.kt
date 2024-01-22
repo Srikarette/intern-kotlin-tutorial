@@ -2,14 +2,14 @@ package com.example.tutorial.controller
 
 import com.example.tutorial.dto.UserCreateReq
 import com.example.tutorial.dto.UserCreateRes
-import com.example.tutorial.dto.UserDeleteReq
-import com.example.tutorial.dto.UserDeleteRes
+import com.example.tutorial.dto.UserDeleteByIdReq
+import com.example.tutorial.dto.UserDeleteByIdRes
 import com.example.tutorial.dto.UserGetByIdReq
 import com.example.tutorial.dto.UserGetByIdRes
 import com.example.tutorial.dto.UserListGetAllFullNameRes
 import com.example.tutorial.dto.UserListGetRes
-import com.example.tutorial.dto.UserUpdateReq
-import com.example.tutorial.dto.UserUpdateRes
+import com.example.tutorial.dto.UserUpdateByIdReq
+import com.example.tutorial.dto.UserUpdateByIdRes
 import com.example.tutorial.mapper.UserCreateResMapper
 import com.example.tutorial.mapper.UserDeleteByIdResMapper
 import com.example.tutorial.mapper.UserGetByIdResMapper
@@ -52,13 +52,13 @@ class UserController(private val userService: UserService) {
     }
 
     @PostMapping("/update")
-    fun putUser(@Valid @RequestBody req: UserUpdateReq): UserUpdateRes {
+    fun putUser(@Valid @RequestBody req: UserUpdateByIdReq): UserUpdateByIdRes {
         val userToUpdate = userService.updateUserById(req)
         return UserUpdateByIdResMapper.toUserUpdateByIdRes(userToUpdate)
     }
 
     @PostMapping("/delete")
-    fun deleteUser(@Valid @RequestBody req: UserDeleteReq): UserDeleteRes {
+    fun deleteUser(@Valid @RequestBody req: UserDeleteByIdReq): UserDeleteByIdRes {
         val userToDelete = userService.deleteUser(req)
         return UserDeleteByIdResMapper.toUserDeleteByIdRes(userToDelete)
     }
