@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType.AUTO
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import java.io.Serializable
 import java.util.UUID
 
 @Entity
@@ -29,4 +30,4 @@ data class User(
     @Column(name = "gender")
     @Enumerated(STRING)
     val gender: UserGender
-)
+): Serializable
