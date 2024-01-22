@@ -17,7 +17,7 @@ data class User(
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = AUTO)
-    val id: UUID?,
+    val id: UUID? = null,
     @Column(name = "first_name")
     val firstName: String,
     @Column(name = "last_name")
