@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import java.io.Serializable
 import java.time.LocalDateTime
 import java.util.UUID
 
@@ -18,9 +19,9 @@ data class Orders(
     @Id
     @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val id: UUID?,
+    val id: UUID? = null,
     @Column(name = "name")
-    val name: String?,
+    val name: String? = null,
     @Column(name = "price")
     val price: Long?,
     @Column(name = "address")
@@ -31,5 +32,5 @@ data class Orders(
     @Enumerated(EnumType.STRING)
     val orderStatus: OrderStatus,
     @Column(name = "user_id")
-    val userId: UUID?
-)
+    val userId: UUID? = null
+): Serializable
