@@ -1,8 +1,6 @@
 package com.example.tutorial.mapper
 
 import com.example.tutorial.dto.OrderDeleteByIdRes
-import com.example.tutorial.dto.UserDeleteByIdRes
-import com.example.tutorial.dto.enums.OrderStatus
 import com.example.tutorial.entity.Orders
 
 class OrderDeleteByIdResMapper private constructor() {

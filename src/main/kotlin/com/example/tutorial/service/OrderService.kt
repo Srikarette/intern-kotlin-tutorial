@@ -5,11 +5,8 @@ import com.example.tutorial.constant.ResponseConstants.GET_ORDER_NOT_FOUND
 import com.example.tutorial.constant.ResponseConstants.GET_USER_NOT_FOUND
 import com.example.tutorial.dto.OrderCreateReq
 import com.example.tutorial.dto.OrderDeleteByIdReq
-import com.example.tutorial.dto.OrderDeleteByIdRes
 import com.example.tutorial.dto.OrderGetByIdReq
 import com.example.tutorial.dto.OrderUpdateByIdReq
-import com.example.tutorial.dto.UserDeleteByIdReq
-import com.example.tutorial.dto.UserDeleteByIdRes
 import com.example.tutorial.entity.Orders
 import com.example.tutorial.repository.OrderRepository
 import com.example.tutorial.repository.UserRepository

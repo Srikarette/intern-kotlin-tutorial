@@ -1,7 +1,6 @@
 package com.example.tutorial.mapper
 
 import com.example.tutorial.dto.OrderUpdateByIdRes
-import com.example.tutorial.dto.enums.OrderStatus
 import com.example.tutorial.entity.Orders
 
 class OrderUpdateByIdResMapper {

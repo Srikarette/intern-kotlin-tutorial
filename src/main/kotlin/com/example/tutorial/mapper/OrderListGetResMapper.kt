@@ -1,8 +1,6 @@
 package com.example.tutorial.mapper
 
 import com.example.tutorial.dto.OrderListGetRes
-import com.example.tutorial.dto.UserListGetRes
-import com.example.tutorial.dto.enums.OrderStatus
 import com.example.tutorial.entity.Orders
 
 class OrderListGetResMapper private constructor() {
@@ -13,7 +11,7 @@ class OrderListGetResMapper private constructor() {
 
         private fun toOrderList(order: Orders): OrderListGetRes {
             return OrderListGetRes(
-                id =order.id!!,
+                id = order.id!!,
                 name = order.name,
                 price = order.price,
                 address = order.address,

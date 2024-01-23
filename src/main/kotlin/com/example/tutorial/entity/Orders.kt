@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
 import java.io.Serializable
-import java.time.LocalDateTime
+import java.time.LocalDate
 import java.util.UUID
 
 @Entity
@@ -27,10 +27,10 @@ data class Orders(
     @Column(name = "address")
     val address: String?,
     @Column(name = "order_date")
-    val orderDateTime: LocalDateTime?,
+    val orderDateTime: LocalDate?,
     @Column(name = "order_status")
     @Enumerated(EnumType.STRING)
     val orderStatus: OrderStatus,
     @Column(name = "user_id")
     val userId: UUID? = null
-): Serializable
+) : Serializable

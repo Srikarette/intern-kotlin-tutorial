@@ -30,4 +30,4 @@ data class User(
     @Column(name = "gender")
     @Enumerated(STRING)
     val gender: UserGender
-): Serializable
+) : Serializable

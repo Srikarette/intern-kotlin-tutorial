@@ -3,8 +3,8 @@ package com.example.tutorial.mapper
 import com.example.tutorial.dto.UserDeleteByIdRes
 import com.example.tutorial.entity.User
 
-class UserDeleteByIdResMapper private constructor(){
-    companion object{
+class UserDeleteByIdResMapper private constructor() {
+    companion object {
         fun toUserDeleteByIdRes(user: User): UserDeleteByIdRes {
             return UserDeleteByIdRes(
                 id = user.id!!,

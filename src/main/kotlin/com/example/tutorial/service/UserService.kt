@@ -5,9 +5,11 @@ import com.example.tutorial.constant.ResponseConstants.GET_USER_NOT_FOUND
 import com.example.tutorial.dto.UserCreateReq
 import com.example.tutorial.dto.UserDeleteByIdReq
 import com.example.tutorial.dto.UserGetByIdReq
+import com.example.tutorial.dto.UserGetOrdersReq
 import com.example.tutorial.dto.UserUpdateByIdReq
 import com.example.tutorial.entity.User
 import com.example.tutorial.entity.viewmodel.UserFullNameGetListProjection
+import com.example.tutorial.entity.viewmodel.UserOrdersGetProjection
 import com.example.tutorial.repository.UserRepository
 import org.springframework.cache.annotation.CacheEvict
 import org.springframework.cache.annotation.CachePut
@@ -30,9 +32,8 @@ class UserService(
         return userRepository.findAll()
     }
 
-    //    @Cacheable(value = ["fullNameList"], unless = "#result==null")
-    fun getUsersFullname(): List<UserFullNameGetListProjection> {
-        return userRepository.getAllUserFullName()
+    fun getUsersFullName(): List<UserFullNameGetListProjection> {
+        return userRepository.getAllUsersFullName()
     }
 
     @Cacheable(value = ["user"], key = "#req.userId")
@@ -40,6 +41,12 @@ class UserService(
         validateUserIdExists(req.userId!!)
         val existsUser = userRepository.findById(req.userId)
         return existsUser.get()
+    }
+
+    //    @Cacheable(value = ["userOrder"], key = "#req.userId")
+    fun getUserOrderById(req: UserGetOrdersReq): List<UserOrdersGetProjection> {
+        validateUserIdExists(req.userId!!)
+        return userRepository.getUserOrders(req.userId)
     }
 
     fun createUser(req: UserCreateReq): User {

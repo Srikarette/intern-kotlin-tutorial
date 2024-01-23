@@ -5,7 +5,7 @@ import com.example.tutorial.dto.enums.OrderStatus.PENDING
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
-import java.time.LocalDateTime
+import java.time.LocalDate
 import java.util.UUID
 
 data class OrderCreateReq(
@@ -13,10 +13,10 @@ data class OrderCreateReq(
     @field:Size(max = 50, message = "order name must no longer than 50 word")
     val name: String?,
     @field:NotNull(message = "order price must not be null")
-    @field:Max(value = 50, message = "order price must not exceed 50")
+    @field:Max(value = 999999, message = "order price must not exceed 999,999")
     val price: Long?,
     val address: String?,
-    val orderDateTime: LocalDateTime?,
+    val orderDateTime: LocalDate?,
     val orderStatus: OrderStatus? = PENDING,
     @field:NotNull(message = "order by must not be null")
     val userId: UUID?

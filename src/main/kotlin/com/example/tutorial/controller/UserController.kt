@@ -6,6 +6,8 @@ import com.example.tutorial.dto.UserDeleteByIdReq
 import com.example.tutorial.dto.UserDeleteByIdRes
 import com.example.tutorial.dto.UserGetByIdReq
 import com.example.tutorial.dto.UserGetByIdRes
+import com.example.tutorial.dto.UserGetOrdersReq
+import com.example.tutorial.dto.UserGetOrdersRes
 import com.example.tutorial.dto.UserListGetAllFullNameRes
 import com.example.tutorial.dto.UserListGetRes
 import com.example.tutorial.dto.UserUpdateByIdReq
@@ -13,6 +15,7 @@ import com.example.tutorial.dto.UserUpdateByIdRes
 import com.example.tutorial.mapper.UserCreateResMapper
 import com.example.tutorial.mapper.UserDeleteByIdResMapper
 import com.example.tutorial.mapper.UserGetByIdResMapper
+import com.example.tutorial.mapper.UserGetOrdersResMapper
 import com.example.tutorial.mapper.UserListGetFullNameResMapper
 import com.example.tutorial.mapper.UserListGetResMapper
 import com.example.tutorial.mapper.UserUpdateByIdResMapper
@@ -35,7 +38,7 @@ class UserController(private val userService: UserService) {
 
     @PostMapping("/get/full/name")
     fun getUserFullNameList(): UserListGetAllFullNameRes {
-        val users = userService.getUsersFullname()
+        val users = userService.getUsersFullName()
         return UserListGetFullNameResMapper.toUserListGetFullNameRes(users)
     }
 
@@ -44,6 +47,13 @@ class UserController(private val userService: UserService) {
         val user = userService.getUserById(req)
         return UserGetByIdResMapper.toUserGetByIdRes(user)
     }
+
+    @PostMapping("/get/order")
+    fun getUserOrderById(@Valid @RequestBody req: UserGetOrdersReq): UserGetOrdersRes {
+        val user = userService.getUserOrderById(req)
+        return UserGetOrdersResMapper.toUserGetOrdersRes(user)
+    }
+
 
     @PostMapping("/create")
     fun updateUserById(@Valid @RequestBody req: UserCreateReq): UserCreateRes {
