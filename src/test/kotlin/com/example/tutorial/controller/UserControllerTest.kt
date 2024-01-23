@@ -56,7 +56,7 @@ class UserControllerTest(
 
             // When
             mockMvc.perform(
-                MockMvcRequestBuilders.get("/users/")
+                MockMvcRequestBuilders.post("/users/")
                     .contentType(APPLICATION_JSON),
             )
                 // Then
