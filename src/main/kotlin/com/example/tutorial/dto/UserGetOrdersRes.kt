@@ -19,7 +19,7 @@ data class UserGetOrdersRes(
         val orderName: String?,
         val orderPrice: Double?,
         val orderAddress: String?,
-        val orderDateTime: String?,
+        val orderDateTime: LocalDate?,
         val orderStatus: OrderStatus
     )
 }
