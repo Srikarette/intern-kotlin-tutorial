@@ -62,7 +62,7 @@ class UserController(private val userService: UserService) {
     }
 
     @PostMapping("/update")
-    fun putUser(@Valid @RequestBody req: UserUpdateByIdReq): UserUpdateByIdRes {
+    fun userUpdateById(@Valid @RequestBody req: UserUpdateByIdReq): UserUpdateByIdRes {
         val userToUpdate = userService.updateUserById(req)
         return UserUpdateByIdResMapper.toUserUpdateByIdRes(userToUpdate)
     }
