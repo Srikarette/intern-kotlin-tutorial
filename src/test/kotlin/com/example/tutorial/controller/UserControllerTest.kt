@@ -57,7 +57,7 @@ class UserControllerTest(
     companion object {
         private fun generateRandomString(length: Int): String {
             val charPool: List<Char> =
-                ('a'..'z') + ('A'..'Z') + ('0'..'9') // You can customize the character pool as needed
+                ('a'..'z') + ('A'..'Z') + ('0'..'9')
             return (1..length)
                 .map { charPool[Random.nextInt(0, charPool.size)] }
                 .joinToString("")
@@ -501,7 +501,7 @@ class UserControllerTest(
     @Nested
     @DisplayName("createUser()")
     inner class CreateUserTest {
-        @ParameterizedTest(name = "GIVEN {0} WHEN createPet THEN {2}")
+        @ParameterizedTest(name = "GIVEN {0} WHEN createUser THEN {2}")
         @MethodSource("com.example.tutorial.controller.UserControllerTest#provideInvalidUserCreate")
         fun `Given invalid request When createUser Then validation error`(
             testCase: String,
@@ -569,7 +569,7 @@ class UserControllerTest(
     @Nested
     @DisplayName("updateUser()")
     inner class UpdateUser {
-        @ParameterizedTest(name = "GIVEN {0} WHEN createPet THEN {2}")
+        @ParameterizedTest(name = "GIVEN {0} WHEN updateUser THEN {2}")
         @MethodSource("com.example.tutorial.controller.UserControllerTest#provideInvalidUserUpdate")
         fun `Given invalid request When updateUser Then validation error`(
             testCase: String,
@@ -639,7 +639,7 @@ class UserControllerTest(
     @Nested
     @DisplayName("deleteUser()")
     inner class DeleteUserTest {
-        @ParameterizedTest(name = "GIVEN {0} WHEN createPet THEN {2}")
+        @ParameterizedTest(name = "GIVEN {0} WHEN deleteUser THEN {2}")
         @MethodSource("com.example.tutorial.controller.UserControllerTest#provideInvalidUserDelete")
         fun `Given invalid request When updateUser Then validation error`(
             testCase: String,
