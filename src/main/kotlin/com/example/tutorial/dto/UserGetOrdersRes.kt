@@ -1,11 +1,13 @@
 package com.example.tutorial.dto
 
+import com.example.tutorial.dto.enums.OrderStatus
+import java.time.LocalDate
 import java.util.UUID
 
 data class UserGetOrdersRes(
     val id: UUID,
     val fullName: String,
-    val totalOrder: Long?,
+    val totalOrder: Int?,
     val userOrders: List<UserData>
 ) {
     data class UserData(
@@ -13,11 +15,11 @@ data class UserGetOrdersRes(
     )
 
     data class OrderData(
-        val orderNumber: Long?,
+        val orderNumber: Int?,
         val orderName: String?,
-        val orderPrice: Long?,
+        val orderPrice: Double?,
         val orderAddress: String?,
-        val orderDateTime: String?,
-        val orderStatus: String?
+        val orderDateTime: LocalDate?,
+        val orderStatus: OrderStatus
     )
 }

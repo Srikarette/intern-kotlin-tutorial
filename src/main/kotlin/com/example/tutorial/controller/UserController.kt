@@ -69,7 +69,7 @@ class UserController(private val userService: UserService) {
 
     @PostMapping("/delete")
     fun deleteUser(@Valid @RequestBody req: UserDeleteByIdReq): UserDeleteByIdRes {
-        val userToDelete = userService.deleteUser(req)
+        val userToDelete = userService.deleteUserById(req)
         return UserDeleteByIdResMapper.toUserDeleteByIdRes(userToDelete)
     }
 

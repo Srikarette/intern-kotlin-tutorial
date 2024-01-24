@@ -23,7 +23,7 @@ data class Orders(
     @Column(name = "name")
     val name: String? = null,
     @Column(name = "price")
-    val price: Long?,
+    val price: Double?,
     @Column(name = "address")
     val address: String?,
     @Column(name = "order_date")

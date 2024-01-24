@@ -13,7 +13,7 @@ data class OrderUpdateByIdReq(
     @field:Size(max = 50, message = "order name must no longer than 50 word")
     val name: String?,
     @field:Max(value = 50, message = "order price must not exceed 50")
-    val price: Long?,
+    val price: Double?,
     val address: String?,
     val orderDateTime: LocalDate?,
     val orderStatus: OrderStatus? = OrderStatus.PENDING,

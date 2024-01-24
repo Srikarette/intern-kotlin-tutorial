@@ -78,7 +78,7 @@ class UserService(
     }
 
     @CacheEvict(value = ["deletedUser"], key = "#req.userId", allEntries = true)
-    fun deleteUser(req: UserDeleteByIdReq): User {
+    fun deleteUserById(req: UserDeleteByIdReq): User {
         validateUserIdExists(req.userId!!)
         val existingUser = userRepository.findById(req.userId)
         userRepository.deleteById(req.userId)

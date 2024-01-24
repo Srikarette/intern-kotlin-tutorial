@@ -7,7 +7,7 @@ import java.util.UUID
 data class OrderListGetRes(
     val id: UUID,
     val name: String?,
-    val price: Long?,
+    val price: Double?,
     val address: String?,
     val orderDateTime: LocalDate?,
     val orderStatus: OrderStatus,

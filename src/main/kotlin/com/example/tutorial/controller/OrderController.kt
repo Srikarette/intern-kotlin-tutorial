@@ -51,7 +51,7 @@ class OrderController(private val orderService: OrderService) {
 
     @PostMapping("/delete")
     fun deleteUser(@Valid @RequestBody req: OrderDeleteByIdReq): OrderDeleteByIdRes {
-        val orderToDelete = orderService.deleteOrder(req)
+        val orderToDelete = orderService.deleteOrderById(req)
         return OrderDeleteByIdResMapper.toOrderDeleteByIdRes(orderToDelete)
     }
 

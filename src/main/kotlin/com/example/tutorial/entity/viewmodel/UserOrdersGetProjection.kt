@@ -1,17 +1,19 @@
 package com.example.tutorial.entity.viewmodel
 
+import com.example.tutorial.dto.enums.OrderStatus
+import java.time.LocalDate
 import java.util.UUID
 
 interface UserOrdersGetProjection {
     val id: UUID
     val fullName: String
-    val totalOrder: Long?
-    val orderNumber: Long?
+    val totalOrder: Int?
+    val orderNumber: Int?
     val orderName: String?
-    val orderPrice: Long?
+    val orderPrice: Double?
     val orderAddress: String?
-    val orderDateTime: String?
-    val orderStatus: String?
+    val orderDateTime: LocalDate?
+    val orderStatus: OrderStatus?
 }
 
 

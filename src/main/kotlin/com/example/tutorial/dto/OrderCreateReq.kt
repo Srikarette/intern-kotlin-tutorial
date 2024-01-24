@@ -14,7 +14,7 @@ data class OrderCreateReq(
     val name: String?,
     @field:NotNull(message = "order price must not be null")
     @field:Max(value = 999999, message = "order price must not exceed 999,999")
-    val price: Long?,
+    val price: Double?,
     val address: String?,
     val orderDateTime: LocalDate?,
     val orderStatus: OrderStatus? = PENDING,

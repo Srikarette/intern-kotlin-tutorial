@@ -28,7 +28,7 @@ class OrderService(
     }
 
     private fun validateOrderIdExists(id: UUID) {
-        if (orderRepository.findById(id).isEmpty) {
+        if (!orderRepository.existsById(id)) {
             throw CommonException(GET_ORDER_NOT_FOUND.getCode(), GET_ORDER_NOT_FOUND.getMessage())
         }
     }
@@ -77,7 +77,7 @@ class OrderService(
     }
 
     @CacheEvict(value = ["deletedOrder"], key = "#req.id", allEntries = true)
-    fun deleteOrder(req: OrderDeleteByIdReq): Orders {
+    fun deleteOrderById(req: OrderDeleteByIdReq): Orders {
         validateUserIdExists(req.userId!!)
         validateOrderIdExists(req.id!!)
         val existingOrder = orderRepository.findById(req.id)

@@ -23,7 +23,7 @@ class UserGetOrdersResMapper private constructor() {
                         orderPrice = user.orderPrice,
                         orderAddress = user.orderAddress,
                         orderDateTime = user.orderDateTime,
-                        orderStatus = user.orderStatus
+                        orderStatus = user.orderStatus!!
                     )
                 )
             )
