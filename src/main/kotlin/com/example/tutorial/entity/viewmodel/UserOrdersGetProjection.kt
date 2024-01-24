@@ -12,7 +12,7 @@ interface UserOrdersGetProjection {
     val orderName: String?
     val orderPrice: Double?
     val orderAddress: String?
-    val orderDateTime: LocalDate?
+    val orderDateTime: String?
     val orderStatus: OrderStatus?
 }
 

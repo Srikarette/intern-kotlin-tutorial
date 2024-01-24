@@ -78,7 +78,7 @@ class UserServiceTest {
                     override val orderName: String = "test order 1"
                     override val orderPrice: Double = 355.5
                     override val orderAddress: String = "address at test street"
-                    override val orderDateTime = LocalDate.now()
+                    override val orderDateTime = "2024-01-22 +07"
                     override val orderStatus = PROCESSING
                 },
             )
